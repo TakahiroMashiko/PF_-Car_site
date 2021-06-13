@@ -1,0 +1,2 @@
+class CarOption < ApplicationRecord
+end
