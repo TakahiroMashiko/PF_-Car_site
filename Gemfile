@@ -69,3 +69,6 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 
 # Install refile-mini_magick
 gem "refile-mini_magick"
+
+# Install kaminari
+gem 'kaminari','~> 1.2.1'
