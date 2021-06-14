@@ -3,4 +3,7 @@ class ApplicationController < ActionController::Base
 
   protected
   # New registration save function
+  def configure_permitted_parameters
+
+  end
 end
