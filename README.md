@@ -27,7 +27,10 @@ https://docs.google.com/spreadsheets/d/10d3oSUZ3sS1FvqfFtKPMHb_i59qZfacKtS_YWCOe
 - OS：Linux(CentOS)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
 - フレームワーク：Ruby on Rails 5.2.5
-- Gem：devise,ImageMagick 7.0.11-15 Q16 x86_64 2021-05-31
+- Gem：devise 4.8.0  
+ImageMagick 7.0.11-15  
+rubocop 1.17.0  
+rubocop-rails 2.10.1
 - CSS フレームワーク：BootStrap
 - JS ライブラリ：jQuery
 - IDE：Cloud9
