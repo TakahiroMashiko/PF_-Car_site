@@ -23,4 +23,8 @@ Rails.application.routes.draw do
       post 'customers/sign_in' => 'customers/sessions#create', as: :customer_session
       delete '/customers/sign_out' => 'customers/sessions#destroy', as: :destroy_customer_session
   end
+
+  scope module: :customer do
+    root to: 'homes#top'
+  end
 end
