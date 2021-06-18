@@ -31,6 +31,7 @@ class Admin::CarsController < ApplicationController
     @car = Car.find(params[:id])
     if @car.update(car_params)
       flash[:notice] = "モデルの情報を更新しました"
+      redirect_to admin_car_path(@car.id)
     else
 
     end
