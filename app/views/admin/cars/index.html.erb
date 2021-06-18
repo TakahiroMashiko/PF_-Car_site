@@ -26,6 +26,10 @@
       </thead>
       <tbody>
         <% @cars.each do |car| %>
-
+          <tr>
+            <td class="info", style="width: 10%">
+              <%= car.id %>
+            </td>
+          </tr>
         <% end %>
       </tbody>
