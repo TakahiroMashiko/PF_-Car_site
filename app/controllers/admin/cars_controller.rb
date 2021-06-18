@@ -11,6 +11,11 @@ class Admin::CarsController < ApplicationController
 
   def create
     @car = Car.new(car_params)
+    if @car.save
+
+    else
+
+    end
   end
 
   def show
