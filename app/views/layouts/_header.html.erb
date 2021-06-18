@@ -14,7 +14,10 @@
         </div>
         <!--問い合わせフォーム実装時にパスを記載する-->
         <div class="col-md-1 text-right d-flex align-items-center">
+        <% if admin_signed_in? %>
           <%= link_to "Help", class: "text-body" %>
+
+        <% end %>
         </div>
         <div class="col-md-2 text-right d-flex align-items-center">
           <!--検索ボックスを実装する-->
