@@ -28,6 +28,7 @@ class Admin::CarsController < ApplicationController
   end
 
   def update
+    @car = Car.find(params[:id])
   end
 
   # Strong parameters
