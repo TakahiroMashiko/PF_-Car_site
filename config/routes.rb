@@ -26,5 +26,12 @@ Rails.application.routes.draw do
 
   scope module: :customer do
     root to: 'homes#top'
+    resources :homes, :except => [:index, :create, :new, :edit, :show, :update, :destroy] do
+      collection do
+        get 'top'
+        get 'about'
+        get 'faq'
+      end
+    end
   end
 end
