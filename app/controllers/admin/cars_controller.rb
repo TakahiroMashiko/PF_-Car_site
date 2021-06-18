@@ -33,7 +33,7 @@ class Admin::CarsController < ApplicationController
       flash[:notice] = "モデルの情報を更新しました"
       redirect_to admin_car_path(@car.id)
     else
-
+      render :edit
     end
   end
 
