@@ -29,6 +29,11 @@ class Admin::CarsController < ApplicationController
 
   def update
     @car = Car.find(params[:id])
+    if @car.update(car_params)
+
+    else
+
+    end
   end
 
   # Strong parameters
