@@ -30,7 +30,7 @@ class Admin::CarsController < ApplicationController
   def update
     @car = Car.find(params[:id])
     if @car.update(car_params)
-
+      flash[:notice] = "モデルの情報を更新しました"
     else
 
     end
