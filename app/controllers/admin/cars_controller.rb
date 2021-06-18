@@ -12,7 +12,7 @@ class Admin::CarsController < ApplicationController
   def create
     @car = Car.new(car_params)
     if @car.save
-
+      flash[:notice] = "新モデルを登録しました"
     else
 
     end
