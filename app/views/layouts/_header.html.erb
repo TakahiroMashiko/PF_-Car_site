@@ -12,11 +12,11 @@
         <div class="col-md-1 text-right d-flex align-items-center">
           <%= link_to "FAQ", faq_homes_path, class: "text-body" %>
         </div>
-        <!--問い合わせフォーム実装時にパスを記載する-->
         <div class="col-md-1 text-right d-flex align-items-center">
         <% if admin_signed_in? %>
           <%= link_to "LogOut", destroy_admin_session_path, method: :delete, class: "text-body" %>
         <% else %>
+          <!--問い合わせフォーム実装時にパスを記載する-->
           <%= link_to "Help", class: "text-body" %>
         <% end %>
         </div>
