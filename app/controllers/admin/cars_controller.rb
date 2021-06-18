@@ -13,6 +13,7 @@ class Admin::CarsController < ApplicationController
     @car = Car.new(car_params)
     if @car.save
       flash[:notice] = "新モデルを登録しました"
+      redirect_to admin_car_path(@car.id)
     else
 
     end
