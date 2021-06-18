@@ -30,6 +30,14 @@
             <td class="info", style="width: 10%">
               <%= car.id %>
             </td>
+            <td class="text-left">
+              <%= link_to admin_car_path(car), class: "btn-link" do %>
+                <u class="text-dark"><%= car.name %></u>
+              <% end %>
+            </td>
+            <td class="text-left", style="width: 10%">
+              ¥<%= car.price.to_s(:delimited) %>
+            </td>
           </tr>
         <% end %>
       </tbody>
