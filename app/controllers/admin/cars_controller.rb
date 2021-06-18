@@ -6,6 +6,7 @@ class Admin::CarsController < ApplicationController
   end
 
   def new
+    @car = Car.new
   end
 
   def create
