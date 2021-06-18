@@ -10,6 +10,7 @@ class Admin::CarsController < ApplicationController
   end
 
   def create
+    @car = Car.new(car_params)
   end
 
   def show
@@ -23,7 +24,7 @@ class Admin::CarsController < ApplicationController
 
   # Strong parameters
   private
-  def item_params
+  def car_params
     params.require(:car).permit(:genre_id, :image_id, :name, :introduction, :price, :is_active)
   end
 end
