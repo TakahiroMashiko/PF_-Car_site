@@ -41,6 +41,17 @@
             <td class="text-left", style="width: 10%">
               <%= car.genre.name %>
             </td>
+            <td class="text-left", style="width: 10%">
+              <% if car.is_active == true %>
+                <p class="text-success mt-2">販売中</p>
+              <% else %>
+                <p class="text-secondary mt-2">>販売停止中</p>
+            </td>
           </tr>
         <% end %>
       </tbody>
+    </table>
+    </div>
+  </div>
+  <%= paginate @cars, class: "text-center" %>
+</div>
