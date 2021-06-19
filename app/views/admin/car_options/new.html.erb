@@ -1,2 +1,20 @@
-<h1>Admin::CarOptions#new</h1>
-<p>Find me in app/views/admin/car_options/new.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <h2 class="head-line title_h2 text-center bg-light">オプション新規登録</h2>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-5 px-sm-0 mx-auto">
+    <div class="my-3">
+    <!-- form_with -->
+    <%= form_with model: [:admin, @car_option], url: admin_car_options_path, local: true do |f| %>
+      <%= render 'form_car_option', f: f %>
+    <div class="col-sm-5 px-sm-0 mx-auto">
+      <%= f.submit "新規登録", class: "btn btn-success text-center" %>
+    </div>
+    <% end %>
+    </div>
+  </div>
+</div>

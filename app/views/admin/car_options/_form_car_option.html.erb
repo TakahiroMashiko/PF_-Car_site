@@ -1,0 +1,17 @@
+<div class="form-inline mb-2">
+  <%= f.label :"オプション名", class:"col-sm-3" %>
+  <%= f.text_field :name, class:"col-sm-9", placeholder: "モデル名" %>
+</div>
+<div class="form-inline mb-2">
+  <%= f.label :"税抜価格", class:"col-sm-3" %>
+  <%= f.text_field :price, class:"col-sm-3", placeholder: "1000000" %>円
+</div>
+<div class="form-inline mb-2">
+  <%= f.label :"販売ステータス", class:"col-sm-3" %>
+  <%= form_with model: [:admin, @car_option], local: true do |f| %>
+  <%= f.radio_button :is_active, true, checked: true %>
+  <%= f.label :is_active, "販売中",  class:"mr-2" %>
+  <%= f.radio_button :is_active, false %>
+  <%= f.label :is_active, "販売停止中" %>
+</div>
+<% end %>
