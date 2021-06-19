@@ -1,2 +1,54 @@
-<h1>Admin::CarOptions#index</h1>
-<p>Find me in app/views/admin/car_options/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <h2 class="head-line title_h2 text-center bg-light">オプション一覧</h2>
+    </div>
+    <div class="col-sm-8"></div>
+    <div class="col-sm-1">
+      <%= link_to new_admin_car_option_path, class: "btn btn-light pull-right" do %>
+        <i class="fas fa-plus"></i>
+      <% end %>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="row">
+    <table class="table table-hover table-condensed">
+      <thead>
+        <tr class="info">
+          <th class="bg-light" style="width: 10%">オプションID</th>
+          <th class="bg-light" style="width: 60%">オプション</th>
+          <th class="bg-light" style="width: 10%">税抜価格</th>
+          <th class="bg-light" style="width: 20%">販売ステータス</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @car_options.each do |car_option| %>
+          <tr>
+            <td class="info", style="width: 10%">
+              <%= car_option.id %>
+            </td>
+            <td class="text-left">
+              <%= link_to admin_car_option_path(car_option), class: "btn-link" do %>
+                <u class="text-dark"><%= car_option.name %></u>
+              <% end %>
+            </td>
+            <td class="text-left", style="width: 10%">
+              ¥<%= car_option.price.to_s(:delimited) %>
+            </td>
+            <td class="text-left", style="width: 20%">
+              <% if car_option.is_active == true %>
+                <p class="text-success mt-2">販売中</p>
+              <% else %>
+                <p class="text-secondary mt-2">>販売停止中</p>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <%= paginate @car_options, class: "text-center" %>
+</div>
