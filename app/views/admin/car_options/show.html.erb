@@ -1,2 +1,31 @@
-<h1>Admin::CarOptions#show</h1>
-<p>Find me in app/views/admin/car_options/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <h2 class="head-line title_h2 text-center bg-light">オプション詳細</h2>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-5 offset-sm-1 px-sm-0">
+      <div class="mt-5 pt-4">
+        <div class="font-weight-bold">オプション名</div>
+          <p><%= @car_option.name %></p>
+        <div class="font-weight-bold">税込価格(税抜価格)</div>
+          <p><%= ((@car_option.price*@tax).to_i).to_s(:delimited) %>（<%= (@car_option.price).to_s(:delimited) %>）円</p>
+        <div class="font-weight-bold">販売ステータス</div>
+          <% if @car_option.is_active == true %>
+            <strong>
+              <span class="text-success">販売中</span>
+            </strong>
+          <% else %>
+            <strong>
+              <span class="text-secondary">販売停止中</span>
+            </strong>
+          <% end %>
+      </div>
+      <%= link_to "編集する", edit_admin_car_option_path(@car_option.id), class: "btn btn-success btn-md mt-2" %>
+    </div>
+  </div>
+</div>
