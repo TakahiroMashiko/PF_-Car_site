@@ -2,15 +2,15 @@ class Admin::CarOptionsController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @car_options = Car_option.all.page(params[:page]).per(10)
+    @car_options = CarOption.all.page(params[:page]).per(10)
   end
 
   def new
-    @car_option = Car_option.new
+    @car_option = CarOption.new
   end
 
   def create
-    @car_option = Car_option.new(car_params)
+    @car_option = CarOption.new(car_params)
     if @car_option.save
       flash[:notice] = "新オプションを登録しました"
       redirect_to admin_car_option_path(@car_option.id)
@@ -20,17 +20,17 @@ class Admin::CarOptionsController < ApplicationController
   end
 
   def show
-    @car_option = Car_option.find(params[:id])
+    @car_option = CarOption.find(params[:id])
     # Tax
     @tax = 1.10
   end
 
   def edit
-    @car_option = Car_option.find(params[:id])
+    @car_option = CarOption.find(params[:id])
   end
 
   def update
-    @car_option = Car_option.find(params[:id])
+    @car_option = CarOption.find(params[:id])
     if @car_option.update(car_params)
       flash[:notice] = "オプションの情報を更新しました"
       redirect_to admin_car_option_path(@car_option.id)
