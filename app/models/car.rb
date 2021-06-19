@@ -7,4 +7,7 @@ class Car < ApplicationRecord
 
   validates :genre_id, :name, :price, presence: true
   validates :price, numericality: { only_integer: true }
+
+  # Tax
+  @tax = 1.10
 end
