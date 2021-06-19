@@ -13,5 +13,28 @@
         <%= attachment_image_tag @car, :image, format: 'jpeg', size: "300x230", fallback: "no_image.jpg" %>
       </div>
     </div>
-
+    <div class="col-sm-5 offset-sm-1 px-sm-0">
+      <div class="mt-5 pt-4">
+        <div class="font-weight-bold">モデル名</div>
+          <p><%= @car.name %></p>
+        <div class="font-weight-bold">モデル説明</div>
+          <p><%= @car.introduction %></p>
+        <div class="font-weight-bold">ジャンル</div>
+          <p><%= @car.genre.name %></p>
+        <div class="font-weight-bold">税込価格(税抜価格)</div>
+          <p><%= ((@car.price*@tax).to_i).to_s(:delimited) %>（<%= (@car.price).to_s(:delimited) %>）円</p>
+        <div class="font-weight-bold">販売ステータス</div>
+          <% if @car.is_active == true %>
+            <strong>
+              <span class="text-success">販売中</span>
+            </strong>
+          <% else %>
+            <strong>
+              <span class="text-secondary">販売停止中</span>
+            </strong>
+          <% end %>
+      </div>
+      <%= link_to "編集する", edit_admin_car_path(@car.id), class: "btn btn-success btn-md mt-2" %>
+    </div>
+  </div>
 </div>
