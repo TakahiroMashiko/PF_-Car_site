@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     root :to =>'visits#index'
     resources :visits, only: [:index, :show, :edit, :update]
     resources :cars, except: [:destroy]
-    resources :genres, only: [:index, :edit]
+    resources :genres, only: [:index, :create, :edit, :update]
   end
 
   # customer
