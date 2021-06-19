@@ -5,16 +5,15 @@
     </div>
   </div>
 </div>
-</div>
 <div class="row">
   <div class="col-sm-5 px-sm-0 mx-auto">
     <div class="my-3">
     <!-- form_with -->
     <%= form_with model: [:admin, @car], url: admin_cars_path, local: true do |f| %>
-      <div class="field">
-        <%= render 'form_car', f: f %>
-        <%= f.submit "新規登録", class: "btn btn-success" %>
-      </div>
+      <%= render 'form_car', f: f %>
+    <div class="col-sm-5 px-sm-0 mx-auto">
+      <%= f.submit "新規登録", class: "btn btn-success text-center" %>
+    </div>
     <% end %>
     </div>
   </div>

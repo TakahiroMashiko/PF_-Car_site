@@ -5,12 +5,16 @@
     </div>
   </div>
 </div>
-<div class="container">
-  <div class="row justify-content-md-center">
-  <!-- form_with -->
-  <%= form_with model: [:admin, @car], local: true do |f| %>
-    <%= render 'form_car', f: f %>
-    <%= f.submit "変更を保存", class: "btn btn-success btn-lg pull-right" %>
-  <% end %>
+<div class="row">
+  <div class="col-sm-5 px-sm-0 mx-auto">
+    <div class="my-3">
+    <!-- form_with -->
+    <%= form_with model: [:admin, @car], local: true do |f| %>
+      <%= render 'form_car', f: f %>
+    <div class="col-sm-5 px-sm-0 mx-auto">
+      <%= f.submit "変更を保存", class: "btn btn-success col-sm-3" %>
+    </div>
+    <% end %>
+    </div>
   </div>
 </div>
