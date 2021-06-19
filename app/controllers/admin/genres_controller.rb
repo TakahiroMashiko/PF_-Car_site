@@ -9,6 +9,7 @@ class Admin::GenresController < ApplicationController
   def create
     @genre = Genre.new(genre_params)
     @genre.save
+    render "index"
   end
 
   def edit
