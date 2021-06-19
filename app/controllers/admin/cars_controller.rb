@@ -15,12 +15,14 @@ class Admin::CarsController < ApplicationController
       flash[:notice] = "新モデルを登録しました"
       redirect_to admin_car_path(@car.id)
     else
-      render :new
+      render "new"
     end
   end
 
   def show
     @car = Car.find(params[:id])
+    # Tax
+    @tax = 1.10
   end
 
   def edit
@@ -33,7 +35,7 @@ class Admin::CarsController < ApplicationController
       flash[:notice] = "モデルの情報を更新しました"
       redirect_to admin_car_path(@car.id)
     else
-      render :edit
+      render "edit"
     end
   end
 
