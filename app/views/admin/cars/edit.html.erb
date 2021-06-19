@@ -5,4 +5,12 @@
     </div>
   </div>
 </div>
-<br>
+<div class="container">
+  <div class="row justify-content-md-center">
+  <!-- form_with -->
+  <%= form_with model: [:admin, @car], local: true do |f| %>
+    <%= render 'form_car', f: f %>
+    <%= f.submit "変更を保存", class: "btn btn-success btn-lg pull-right" %>
+  <% end %>
+  </div>
+</div>
