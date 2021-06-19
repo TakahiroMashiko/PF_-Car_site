@@ -5,3 +5,16 @@
     </div>
   </div>
 </div>
+<div class="row">
+  <div class="col-sm-10 px-sm-0 mx-auto">
+    <div class="mb-3">
+      <%= form_with model: [:admin, @genre], local: true do |f| %>
+      <div class="field">
+        <%= f.label "ジャンル名" %>
+        <%= f.text_field :name, placeholder: "ジャンル名", class: "mx-5" %>
+        <%= f.submit "新規登録", class: "btn btn-success" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
