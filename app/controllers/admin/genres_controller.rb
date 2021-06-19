@@ -18,6 +18,11 @@ class Admin::GenresController < ApplicationController
 
   def update
     @genre = Genre.find(params[:id])
+    if @genre.update(genre_params)
+
+    else
+
+    end
   end
 
   # Strong parameters
