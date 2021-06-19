@@ -17,6 +17,7 @@ class Admin::GenresController < ApplicationController
   end
 
   def update
+    @genre = Genre.find(params[:id])
   end
 
   # Strong parameters
