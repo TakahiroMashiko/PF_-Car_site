@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root :to =>'visits#index'
+    resources :customers, only: [:index, :edit, :show, :update]
     resources :visits, only: [:index, :show, :edit, :update]
     resources :cars, except: [:destroy]
     resources :car_options, except: [:destroy]
