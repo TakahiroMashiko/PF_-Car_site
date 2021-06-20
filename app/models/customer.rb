@@ -6,6 +6,7 @@ class Customer < ApplicationRecord
 
   has_many :visits
   has_many :estimates
+  has_many :contacts
 
   validates :last_name, :first_name, :last_name_kana, :first_name_kana, :phone_number, presence: true
   validates :phone_number, numericality: { only_integer: true }
