@@ -16,7 +16,30 @@
           <th class="bg-light">ステータス</th>
         </tr>
       </thead>
-
+      <tbody>
+        <% @customers.each do |customer| %>
+          <tr>
+            <td class="info", style="width: 10%">
+              <%= customer.id %>
+            </td>
+            <td class="text-left", style="width: 40%">
+            <%= link_to admin_customer_path(customer.id), class: "text-dark" do %>
+              <%= customer.last_name + customer.first_name %>
+            <% end %>
+            </td>
+            <td class="text-left", style="width: 40%">
+              <%= customer.email %>
+            </td>
+            <td class="text-left", style="width: 10%">
+              <% if customer.is_active == true %>
+                <p class="text-success">有効</p>
+              <% else %>
+                <p class="text-secondary">退会</p>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
     </table>
   </div>
 </div>
