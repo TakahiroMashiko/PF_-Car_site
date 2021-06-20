@@ -5,17 +5,18 @@
     </div>
   </div>
 </div>
-<br>
 <div class="container">
   <div class="row">
-    <div class="col-sm-5 offset-sm-1 px-sm-0">
-      <div class="mt-5 pt-4">
+    <div class="col-sm-5 mx-auto">
+      <div class="mt-3 pt-4">
         <div class="font-weight-bold">オプション名</div>
-          <p><%= @car_option.name %></p>
+          <p><%= @caroption.name %></p>
         <div class="font-weight-bold">税込価格(税抜価格)</div>
-          <p><%= ((@car_option.price*@tax).to_i).to_s(:delimited) %>（<%= (@car_option.price).to_s(:delimited) %>）円</p>
+          <p><%= ((@caroption.price*@tax).to_i).to_s(:delimited) %>（<%= (@caroption.price).to_s(:delimited) %>）円</p>
+        <div class="font-weight-bold">対象モデル名</div>
+          <p><%= @caroption.car.name %></p>
         <div class="font-weight-bold">販売ステータス</div>
-          <% if @car_option.is_active == true %>
+          <% if @caroption.is_active == true %>
             <strong>
               <span class="text-success">販売中</span>
             </strong>
@@ -25,7 +26,7 @@
             </strong>
           <% end %>
       </div>
-      <%= link_to "編集する", edit_admin_car_option_path(@car_option.id), class: "btn btn-success btn-md mt-2" %>
+      <%= link_to "編集する", edit_admin_car_option_path(@caroption.id), class: "btn btn-success btn-md mt-2" %>
     </div>
   </div>
 </div>
