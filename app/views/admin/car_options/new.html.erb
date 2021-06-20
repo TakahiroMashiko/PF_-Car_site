@@ -9,7 +9,7 @@
   <div class="col-sm-5 px-sm-0 mx-auto">
     <div class="my-3">
     <!-- form_with -->
-    <%= form_with model: [:admin, @car_option], url: admin_car_options_path, local: true do |f| %>
+    <%= form_with model: [:admin, @caroption], url: admin_car_options_path, local: true do |f| %>
       <%= render 'form_car_option', f: f %>
     <div class="col-sm-5 px-sm-0 mx-auto">
       <%= f.submit "新規登録", class: "btn btn-success text-center" %>
