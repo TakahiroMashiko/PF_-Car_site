@@ -13,4 +13,7 @@ class Customer < ApplicationRecord
   validates :phone_number, numericality: { only_integer: true }
   validates :last_name_kana, :first_name_kana,
     format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/ }
+  # Email address regular expression
+  validates :email, presence: true, length: { maximum: 300 },
+    format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
 end
