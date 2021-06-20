@@ -15,6 +15,10 @@ class Admin::CustomersController < ApplicationController
 
   def update
     @customer = Customer.find(params[:id])
+    if @customer.update(customer_params)
 
+    else
+
+    end
   end
 end
