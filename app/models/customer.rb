@@ -6,4 +6,6 @@ class Customer < ApplicationRecord
 
   validates :last_name, :first_name, :last_name_kana, :first_name_kana, :phone_number, presence: true
   validates :phone_number, numericality: { only_integer: true }
+  validates :last_name_kana, :first_name_kana,
+    format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/ }
 end
