@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :cars, except: [:destroy]
     resources :car_options, except: [:destroy]
     resources :genres, only: [:index, :create, :edit, :update]
+    resources :blogs
   end
 
   # customer
