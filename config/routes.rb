@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     post 'admins/sign_up' => 'admins/registrations#create', as: :admin_registration
     get 'admins/sign_in' => 'admins/sessions#new', as: :new_admin_session
     post 'admins/sign_in' => 'admins/sessions#create', as: :admin_session
-    delete '/admins/sign_out' => 'admins/sessions#destroy', as: :destroy_admin_session
+    delete 'admins/sign_out' => 'admins/sessions#destroy', as: :destroy_admin_session
   end
 
   namespace :admin do
@@ -26,7 +26,7 @@ Rails.application.routes.draw do
       post 'customers/sign_up' => 'customers/registrations#create', as: :customer_registration
       get 'customers/sign_in' => 'customers/sessions#new', as: :new_customer_session
       post 'customers/sign_in' => 'customers/sessions#create', as: :customer_session
-      delete '/customers/sign_out' => 'customers/sessions#destroy', as: :destroy_customer_session
+      delete 'customers/sign_out' => 'customers/sessions#destroy', as: :destroy_customer_session
   end
 
   scope module: :customer do
