@@ -19,7 +19,7 @@ class Admin::VisitsController < ApplicationController
       flash[:notice] = "来店予約の情報を更新しました"
       redirect_to admin_visit_path(@visit.id)
     else
-
+      render "edit"
     end
   end
 end
