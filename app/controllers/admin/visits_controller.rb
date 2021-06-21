@@ -14,5 +14,6 @@ class Admin::VisitsController < ApplicationController
   end
 
   def update
+    @visit = Visit.find(params[:id])
   end
 end
