@@ -15,5 +15,10 @@ class Admin::VisitsController < ApplicationController
 
   def update
     @visit = Visit.find(params[:id])
+    if @visit.update(visit_params)
+
+    else
+
+    end
   end
 end
