@@ -10,6 +10,7 @@ class Admin::VisitsController < ApplicationController
   end
 
   def edit
+    @visit = Visit.find(params[:id])
   end
 
   def update
