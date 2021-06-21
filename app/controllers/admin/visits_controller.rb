@@ -16,7 +16,7 @@ class Admin::VisitsController < ApplicationController
   def update
     @visit = Visit.find(params[:id])
     if @visit.update(visit_params)
-
+      flash[:notice] = "来店予約の情報を更新しました"
     else
 
     end
