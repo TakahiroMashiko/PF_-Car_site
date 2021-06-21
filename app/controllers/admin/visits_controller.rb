@@ -17,6 +17,7 @@ class Admin::VisitsController < ApplicationController
     @visit = Visit.find(params[:id])
     if @visit.update(visit_params)
       flash[:notice] = "来店予約の情報を更新しました"
+      redirect_to admin_visit_path(@visit.id)
     else
 
     end
