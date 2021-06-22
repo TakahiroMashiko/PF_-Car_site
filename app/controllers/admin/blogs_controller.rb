@@ -39,5 +39,11 @@ class Admin::BlogsController < ApplicationController
 
   def destroy
     @blog = Blog.find(params[:id])
+    if @blog.destroy
+      flash[:notice] = "ブログを削除しました"
+      redirect_to admin_blogs_path
+    else
+      render "edit"
+    end
   end
 end
