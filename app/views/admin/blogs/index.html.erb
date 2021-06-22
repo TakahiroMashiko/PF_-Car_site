@@ -21,7 +21,23 @@
           <th class="bg-light" style="width: 45%">タイトル</th>
           <th class="bg-light" style="width: 45%">本文</th>
       </thead>
-
+      <tbody>
+        <% @blogs.each do |blog| %>
+          <tr>
+            <td class="info", style="width: 10%">
+              <%= blog.id %>
+            </td>
+            <td class="text-left", style="width: 45%">
+              <%= link_to admin_blog_path(blog), class: "btn-link" do %>
+                <u class="text-dark"><%= blog.title %></u>
+              <% end %>
+            </td>
+            <td class="text-left", style="width: 45%">
+              <%= blog.body %>
+            </td>
+          <tr>
+        <% end %>
+      </tbody>
     </table>
     </div>
   </div>
