@@ -13,6 +13,7 @@ class Admin::BlogsController < ApplicationController
     @blog = Blog.new(blog_params)
     if @blog.save
       flash[:notice] = "ブログを新規投稿しました"
+      redirect_to admin_blog_path(@blog.id)
     else
 
     end
