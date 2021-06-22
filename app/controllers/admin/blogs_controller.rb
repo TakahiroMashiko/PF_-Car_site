@@ -29,6 +29,11 @@ class Admin::BlogsController < ApplicationController
 
   def update
     @blog = Blog.find(params[:id])
+    if @blog.update(blog_params)
+
+    else
+
+    end
   end
 
   def destroy
