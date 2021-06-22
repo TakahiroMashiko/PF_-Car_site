@@ -31,6 +31,7 @@ class Admin::BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
     if @blog.update(blog_params)
       flash[:notice] = "ブログの内容を更新しました"
+      redirect_to admin_blog_path(@blog.id)
     else
 
     end
