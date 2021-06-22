@@ -10,6 +10,7 @@ class Admin::BlogsController < ApplicationController
   end
 
   def create
+    @blog = Blog.new(blog_params)
   end
 
   def show
