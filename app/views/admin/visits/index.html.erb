@@ -38,9 +38,9 @@
             <td class="text-left", style="width: 15%">
               <% if visit.visit_status == 0 %>
                 <p class="text-success mt-2">来店待ち</p>
-              <% else if visit.visit_status == 1 %>
+              <% elsif visit.visit_status == 1 %>
                 <p class="text-danger mt-2">接客中</p>
-              <% else if visit.visit_status == 2 %>
+              <% elsif visit.visit_status == 2 %>
                 <p class="text-primary mt-2">キャンセル</p>
               <% else %>
                 <p class="text-secondary mt-2">接客済み</p>
