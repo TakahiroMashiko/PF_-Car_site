@@ -46,4 +46,10 @@ class Admin::BlogsController < ApplicationController
       render "edit"
     end
   end
+
+  # Strong parameters
+  private
+  def blog_params
+    params.require(:blog).permit(:title, :body, :image_id)
+  end
 end
