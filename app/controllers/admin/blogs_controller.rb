@@ -33,7 +33,7 @@ class Admin::BlogsController < ApplicationController
       flash[:notice] = "ブログの内容を更新しました"
       redirect_to admin_blog_path(@blog.id)
     else
-
+      render "edit"
     end
   end
 
