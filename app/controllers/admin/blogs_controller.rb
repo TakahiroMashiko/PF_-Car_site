@@ -12,7 +12,7 @@ class Admin::BlogsController < ApplicationController
   def create
     @blog = Blog.new(blog_params)
     if @blog.save
-
+      flash[:notice] = "ブログを新規投稿しました"
     else
 
     end
