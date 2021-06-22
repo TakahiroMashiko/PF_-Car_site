@@ -38,5 +38,6 @@ class Admin::BlogsController < ApplicationController
   end
 
   def destroy
+    @blog = Blog.find(params[:id])
   end
 end
