@@ -11,6 +11,11 @@ class Admin::BlogsController < ApplicationController
 
   def create
     @blog = Blog.new(blog_params)
+    if @blog.save
+
+    else
+
+    end
   end
 
   def show
