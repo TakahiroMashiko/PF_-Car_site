@@ -30,7 +30,7 @@ class Admin::BlogsController < ApplicationController
   def update
     @blog = Blog.find(params[:id])
     if @blog.update(blog_params)
-
+      flash[:notice] = "ブログの内容を更新しました"
     else
 
     end
