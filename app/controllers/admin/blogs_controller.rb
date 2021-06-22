@@ -15,7 +15,7 @@ class Admin::BlogsController < ApplicationController
       flash[:notice] = "ブログを新規投稿しました"
       redirect_to admin_blog_path(@blog.id)
     else
-
+      render "new"
     end
   end
 
