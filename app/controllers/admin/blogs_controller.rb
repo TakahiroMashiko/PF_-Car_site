@@ -50,6 +50,6 @@ class Admin::BlogsController < ApplicationController
   # Strong parameters
   private
   def blog_params
-    params.require(:blog).permit(:favorite_id, :image_id, :title, :body)
+    params.require(:blog).permit(:favorite_id, :image_id, :title, :body, :image)
   end
 end
