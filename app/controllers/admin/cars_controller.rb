@@ -42,6 +42,6 @@ class Admin::CarsController < ApplicationController
   # Strong parameters
   private
   def car_params
-    params.require(:car).permit(:genre_id, :image_id, :name, :introduction, :price, :is_active)
+    params.require(:car).permit(:genre_id, :image_id, :name, :introduction, :price, :image, :is_active)
   end
 end
