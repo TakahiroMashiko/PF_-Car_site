@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :genres, only: [:index, :create, :edit, :update]
     resources :blogs
     resources :contacts, only: [:index, :show]
+    resources :dealers, except: [:destroy]
   end
 
   # customer
