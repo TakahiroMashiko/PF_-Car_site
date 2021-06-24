@@ -33,7 +33,7 @@ class Admin::DealersController < ApplicationController
       flash[:notice] = "ディーラーの情報を更新しました"
       redirect_to admin_dealer_path(@dealer.id)
     else
-
+      render "edit"
     end
   end
 end
