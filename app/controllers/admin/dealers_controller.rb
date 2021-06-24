@@ -20,6 +20,7 @@ class Admin::DealersController < ApplicationController
   end
 
   def show
+    @dealer = Dealer.find(params[:id])
   end
 
   def edit
