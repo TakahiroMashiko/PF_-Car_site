@@ -36,4 +36,10 @@ class Admin::DealersController < ApplicationController
       render "edit"
     end
   end
+
+  # Strong parameters
+  private
+  def dealer_params
+    params.require(:dealer).permit(:image_id, :address, :phone_number, :image)
+  end
 end
