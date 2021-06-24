@@ -1,5 +1,5 @@
 class Genre < ApplicationRecord
-  has_many :cars, dependent: :destroy
+  has_many :cars
 
   validates :name, presence: true
 end
