@@ -31,6 +31,7 @@ class Admin::DealersController < ApplicationController
     @dealer = Dealer.find(params[:id])
     if @dealer.update(dealer_params)
       flash[:notice] = "ディーラーの情報を更新しました"
+      redirect_to admin_dealer_path(@dealer.id)
     else
 
     end
