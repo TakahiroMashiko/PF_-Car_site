@@ -12,7 +12,7 @@ class Admin::DealersController < ApplicationController
   def create
     @dealer = Dealer.new(dealer_params)
     if @dealer.save
-
+      flash[:notice] = "ディーラーを新規登録しました"
     else
 
     end
