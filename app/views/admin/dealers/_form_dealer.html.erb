@@ -1,0 +1,12 @@
+<div class="form-inline mb-2">
+  <%= f.label :"ディーラー画像", class:"col-sm-3" %>
+  <%= f.attachment_field :image, class:"image col-sm-9" %>
+</div>
+<div class="form-inline mb-2">
+  <%= f.label :"住所", class:"col-sm-3" %>
+  <%= f.text_field :address, class:"col-sm-9", placeholder: "住所" %>
+</div>
+<div class="form-inline mb-2">
+  <%= f.label :"電話番号", class:"col-sm-3" %>
+  <%= f.text_field :phone_number, class:"col-sm-9", placeholder: "00-0000-0000" %>
+</div>
