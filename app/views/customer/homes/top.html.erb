@@ -1,2 +1,11 @@
-<h1>Customer::Homes#top</h1>
-<p>Find me in app/views/customer/homes/top.html.erb</p>
+<main class="mx-auto">
+  <p class = "text-success"><%= flash[:success] %></p>
+  <div class="card">
+    <img class="card-img" src="assets/MIYA151230409796_1920x1137.jpg" alt="main caption" width="100%" height="100%">
+    <div class="card-img-overlay d-flex align-items-center justify-content-center">
+      <h1 class="text-white text-center bg-transparent">
+        <appname>Sengoku Cars ~ your car life. ~ </appname><br>
+        <appname>Log in</appname><%= link_to "", new_customer_session_path, class: "fas fa-sign-in-alt text-white ml-2" %>
+    </div>
+  </div>
+</main>
