@@ -42,3 +42,5 @@ rubocop-rails 2.10.1
 https://cacoo.com/ja/
 - draw.io：ER図作成時に使用したサービス  
 https://app.diagrams.net/
+- ぱくたそ：画像の挿入時に使用したサービス  
+https://www.pakutaso.com/
