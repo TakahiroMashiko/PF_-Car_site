@@ -10,6 +10,7 @@ class Admin::DealersController < ApplicationController
   end
 
   def create
+    @dealer = Dealer.new(dealer_params)
   end
 
   def show
