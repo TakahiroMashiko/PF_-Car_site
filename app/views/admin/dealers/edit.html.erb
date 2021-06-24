@@ -1,2 +1,20 @@
-<h1>Admin::Dealers#edit</h1>
-<p>Find me in app/views/admin/dealers/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <h2 class="head-line title_h2 text-center bg-light">ディーラー編集</h2>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-5 px-sm-0 mx-auto">
+    <div class="my-3">
+    <!-- form_with -->
+    <%= form_with model: [:admin, @dealer], local: true do |f| %>
+      <%= render 'form_dealer', f: f %>
+    <div class="col-sm-5 px-sm-0 mx-auto">
+      <%= f.submit "変更を保存", class: "btn btn-success" %>
+    </div>
+    <% end %>
+    </div>
+  </div>
+</div>
