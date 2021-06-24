@@ -12,3 +12,35 @@
   </div>
 </div>
 <br>
+<div class="container">
+  <div class="row">
+    <table class="table table-hover table-condensed">
+      <thead>
+        <tr class="info">
+          <th class="bg-light" style="width: 15%">ディーラーID</th>
+          <th class="bg-light" style="width: 70%">住所</th>
+          <th class="bg-light" style="width: 15%">電話番号</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @dealers.each do |dealer| %>
+          <tr>
+            <td class="info", style="width: 15%">
+              <%= dealer.id %>
+            </td>
+            <td class="text-left", style="width: 70%">
+              <%= link_to admin_dealer_path(dealer), class: "btn-link" do %>
+                <u class="text-dark"><%= dealer.address %></u>
+              <% end %>
+            </td>
+            <td class="text-left", style="width: 15%">
+              <%= dealer.phone_number %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <%= paginate @dealers, class: "text-center" %>
+</div>
