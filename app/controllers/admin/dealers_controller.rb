@@ -13,6 +13,7 @@ class Admin::DealersController < ApplicationController
     @dealer = Dealer.new(dealer_params)
     if @dealer.save
       flash[:notice] = "ディーラーを新規登録しました"
+      redirect_to admin_dealer_path(@dealer.id)
     else
 
     end
