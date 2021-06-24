@@ -1,2 +1,20 @@
-<h1>Admin::Dealers#new</h1>
-<p>Find me in app/views/admin/dealers/new.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-5">
+      <h2 class="head-line title_h2 text-center bg-light">ディーラー新規登録</h2>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-5 px-sm-0 mx-auto">
+    <div class="my-3">
+    <!-- form_with -->
+    <%= form_with model: [:admin, @dealer], url: admin_dealers_path, local: true do |f| %>
+      <%= render 'form_dealer', f: f %>
+    <div class="col-sm-5 px-sm-0 mx-auto">
+      <%= f.submit "新規登録", class: "btn btn-success text-center" %>
+    </div>
+    <% end %>
+    </div>
+  </div>
+</div>
