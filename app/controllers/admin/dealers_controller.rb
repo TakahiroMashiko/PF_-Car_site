@@ -6,6 +6,7 @@ class Admin::DealersController < ApplicationController
   end
 
   def new
+    @dealer = Dealer.new
   end
 
   def create
