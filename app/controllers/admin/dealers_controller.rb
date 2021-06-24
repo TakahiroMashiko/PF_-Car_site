@@ -15,7 +15,7 @@ class Admin::DealersController < ApplicationController
       flash[:notice] = "ディーラーを新規登録しました"
       redirect_to admin_dealer_path(@dealer.id)
     else
-
+      render "new"
     end
   end
 
