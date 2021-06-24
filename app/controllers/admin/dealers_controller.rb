@@ -29,5 +29,10 @@ class Admin::DealersController < ApplicationController
 
   def update
     @dealer = Dealer.find(params[:id])
+    if @dealer.update(dealer_params)
+
+    else
+
+    end
   end
 end
