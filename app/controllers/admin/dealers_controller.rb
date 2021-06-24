@@ -28,5 +28,6 @@ class Admin::DealersController < ApplicationController
   end
 
   def update
+    @dealer = Dealer.find(params[:id])
   end
 end
