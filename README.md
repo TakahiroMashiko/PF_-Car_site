@@ -43,5 +43,12 @@ https://cacoo.com/ja/
 - draw.io：ER図作成時に使用したサービス  
 https://app.diagrams.net/
 - ぱくたそ、イラストAC：画像の挿入時に使用したサービス  
+<<<<<<< HEAD
 https://www.pakutaso.com/    
 https://www.ac-illust.com/
+=======
+https://www.pakutaso.com/  
+https://www.ac-illust.com/
+- FontAwesome、Google Fonts：Webフォント
+https://fontawesome.com/
+>>>>>>> 9191e3474980613d0d270401b1d00e1f8558a782
