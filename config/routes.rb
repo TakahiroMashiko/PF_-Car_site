@@ -40,5 +40,7 @@ Rails.application.routes.draw do
         get 'faq'
       end
     end
+    resources :contacts, only: [:new]
+    resources :dealers, only: [:index, :show]
   end
 end
