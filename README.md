@@ -45,3 +45,5 @@ https://app.diagrams.net/
 - ぱくたそ、イラストAC：画像の挿入時に使用したサービス  
 https://www.pakutaso.com/  
 https://www.ac-illust.com/
+- FontAwesome、Google Fonts：Webフォント
+https://fontawesome.com/
