@@ -40,6 +40,12 @@ Rails.application.routes.draw do
         get 'faq'
       end
     end
+    resource :customers, only: [:edit, :show, :update] do
+      collection do
+        get 'withdrawal'
+        patch 'quit'
+      end
+    end
     resources :cars, only: [:index, :show]
     resources :contacts, only: [:new]
     resources :dealers, only: [:index, :show]
