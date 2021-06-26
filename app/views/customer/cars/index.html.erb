@@ -25,7 +25,7 @@
               <%= attachment_image_tag car, :image, format: 'jpeg', size: "300x230", fallback: "no_image.jpg" %>
             </td>
             <td class="text-left">
-              <%= link_to car_path(car), class: "btn-link" do %>
+              <%= link_to car_path(car) do %>
                 <u class="text-dark"><%= car.name %></u>
               <% end %>
             </td>
