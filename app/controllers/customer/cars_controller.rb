@@ -6,5 +6,8 @@ class Customer::CarsController < ApplicationController
   end
 
   def show
+    @car = Car.find(params[:id])
+    # Tax
+    @tax = 1.10
   end
 end
