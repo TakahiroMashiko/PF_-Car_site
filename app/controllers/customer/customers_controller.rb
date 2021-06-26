@@ -1,4 +1,6 @@
 class Customer::CustomersController < ApplicationController
+  before_action :authenticate_customer!, only: [:show, :edit, :update, :withdrawal, :quit]
+
   def show
   end
 
