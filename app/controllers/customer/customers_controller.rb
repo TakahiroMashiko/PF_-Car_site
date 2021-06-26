@@ -11,6 +11,11 @@ class Customer::CustomersController < ApplicationController
 
   def update
     @customer = current_customer
+    if @customer.update(customer_params)
+
+    else
+
+    end
   end
 
   def withdrawal
