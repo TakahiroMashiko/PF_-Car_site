@@ -46,6 +46,12 @@ Rails.application.routes.draw do
         patch 'quit'
       end
     end
+    resources :visits, only: [:new, :create] do
+      collection do
+        post 'confirm'
+        get 'finish'
+      end
+    end
     resources :cars, only: [:index, :show]
     resources :contacts, only: [:new]
     resources :blogs, only: [:index, :show]
