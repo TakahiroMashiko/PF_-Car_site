@@ -83,3 +83,6 @@ gem 'rubocop', require: false
 
 # Install rubocop-rails
 gem 'rubocop-rails', require: false
+
+# Install dotenv-rails
+gem "dotenv-rails"
