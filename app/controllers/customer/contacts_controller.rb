@@ -19,6 +19,7 @@ class Customer::ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     if @contact.save
       ContactMailer.send_mail(@contact).deliver_now
+      redirect_to finish_contacts_path
     else
 
     end
