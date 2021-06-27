@@ -15,7 +15,7 @@ class Customer::CustomersController < ApplicationController
       flash[:success] = "会員情報を更新しました"
       redirect_to customers_path
     else
-
+      render "edit"
     end
   end
 
