@@ -16,5 +16,6 @@ class Customer::ContactsController < ApplicationController
   end
 
   def create
+    @contact = Contact.new(contact_params)
   end
 end
