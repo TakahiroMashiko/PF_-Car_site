@@ -7,6 +7,9 @@ class Customer::ContactsController < ApplicationController
 
   def confirm
     @contact = Contact.new(contact_params)
+    if @contact.invalid?
+      render "new"
+    end
   end
 
   def finish
