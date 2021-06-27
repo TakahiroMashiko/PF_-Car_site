@@ -6,6 +6,7 @@ class Customer::ContactsController < ApplicationController
   end
 
   def confirm
+    @contact = Contact.new(contact_params)
   end
 
   def finish
