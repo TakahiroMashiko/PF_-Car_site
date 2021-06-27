@@ -53,7 +53,12 @@ Rails.application.routes.draw do
       end
     end
     resources :cars, only: [:index, :show]
-    resources :contacts, only: [:new]
+    resources :contacts, only: [:new, :create] do
+    collection do
+        post 'confirm'
+        get 'finish'
+      end
+    end
     resources :blogs, only: [:index, :show]
     resources :dealers, only: [:index, :show]
   end
