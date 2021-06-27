@@ -48,6 +48,7 @@ Rails.application.routes.draw do
     end
     resources :cars, only: [:index, :show]
     resources :contacts, only: [:new]
+    resources :blogs, only: [:index, :show]
     resources :dealers, only: [:index, :show]
   end
 end
