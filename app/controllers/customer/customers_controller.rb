@@ -27,6 +27,7 @@ class Customer::CustomersController < ApplicationController
     @customer = current_customer
     @customer.update(is_active: false)
     reset_session
+    flash[:success] = "退会処理しました。ご利用いただきありがとうございました。"
   end
 
   # Strong parameters
