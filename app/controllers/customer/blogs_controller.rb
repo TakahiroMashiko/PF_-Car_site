@@ -4,5 +4,6 @@ class Customer::BlogsController < ApplicationController
   end
 
   def show
+    @blog = Blog.find(params[:id])
   end
 end
