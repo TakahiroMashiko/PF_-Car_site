@@ -24,4 +24,10 @@ class Customer::CustomersController < ApplicationController
 
   def quit
   end
+
+  # Strong parameters
+  private
+  def customer_params
+   params.require(:customer).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :email, :phone_number, :is_active)
+  end
 end
