@@ -31,6 +31,7 @@ https://docs.google.com/spreadsheets/d/10d3oSUZ3sS1FvqfFtKPMHb_i59qZfacKtS_YWCOe
 ImageMagick 7.0.11-15  
 rubocop 1.17.0  
 rubocop-rails 2.10.1
+dotenv-rails
 - CSS フレームワーク：BootStrap
 - JS ライブラリ：jQuery
 - IDE：Cloud9
