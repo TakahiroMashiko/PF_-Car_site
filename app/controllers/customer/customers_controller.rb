@@ -12,7 +12,7 @@ class Customer::CustomersController < ApplicationController
   def update
     @customer = current_customer
     if @customer.update(customer_params)
-
+      flash[:success] = "会員情報を更新しました"
     else
 
     end
