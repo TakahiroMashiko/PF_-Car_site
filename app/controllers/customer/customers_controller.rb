@@ -25,6 +25,7 @@ class Customer::CustomersController < ApplicationController
 
   def quit
     @customer = current_customer
+    @customer.update(is_active: false)
   end
 
   # Strong parameters
