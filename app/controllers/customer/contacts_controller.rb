@@ -21,7 +21,7 @@ class Customer::ContactsController < ApplicationController
       ContactMailer.send_mail(@contact).deliver_now
       redirect_to finish_contacts_path
     else
-
+      render "new"
     end
   end
 end
