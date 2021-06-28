@@ -61,5 +61,6 @@ Rails.application.routes.draw do
     end
     resources :blogs, only: [:index, :show]
     resources :dealers, only: [:index, :show]
+    resources :favorites, only: [:create, :destoroy]
   end
 end
