@@ -59,8 +59,9 @@ Rails.application.routes.draw do
         get 'finish'
       end
     end
-    resources :blogs, only: [:index, :show]
+    resources :blogs, only: [:index, :show] do
+      resource :favorites, only: [:create, :destroy]
+    end
     resources :dealers, only: [:index, :show]
-    resource :favorites, only: [:create, :destroy]
   end
 end
