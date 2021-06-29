@@ -19,7 +19,19 @@
         <div class="font-weight-bold">本文</div>
           <p><%= @blog.body %></p>
         <div class="font-weight-bold">いいね</div>
-          <!--<p>js.erbを使用していいね機能実装</p>-->
+          <% if @blog.favorited_by?(current_customer) %>
+            <p>
+              <%= link_to favorites_path(@blog), method: :delete do %>
+                ♥<%= @blog.favorites.count %> いいね
+              <% end %>
+            </p>
+            <% else %>
+            <p>
+              <%= link_to favorites_path(@blog), method: :post do %>
+                ♡<%= @blog.favorites.count %> いいね
+              <% end %>
+            </p>
+          <% end %>
         </div>
     </div>
   </div>
