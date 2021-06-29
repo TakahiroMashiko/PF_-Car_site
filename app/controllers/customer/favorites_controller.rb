@@ -9,5 +9,9 @@ class Customer::FavoritesController < ApplicationController
   end
 
   def destroy
+    @blog = Blog.find(params[:blog_id])
+    favorite = Favorite.find_by(blog_id: params[:blog_id], customer_id: current_customer.id)
+    favorite.destroy
+    redirect_to blog_path(@blog.id)
   end
 end
