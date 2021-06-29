@@ -1,4 +1,5 @@
 class Blog < ApplicationRecord
+  belongs_to :customer
   has_many :favorites
 
   attachment :image
