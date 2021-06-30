@@ -1,0 +1,7 @@
+<% if customer_signed_in? %>
+   <% if blog.favorited_by?(current_customer) %>
+    <p><span>♥<%= link_to blog.favorites.count, blog_favorites_path(blog.id), method: :delete, remote: true, class: "text-body" %></p></span>
+  <% else %>
+    <p><span>♡<%= link_to blog.favorites.count, blog_favorites_path(blog.id), method: :post, remote: true, class: "text-body" %></p></span>
+  <% end %>
+<% end %>
