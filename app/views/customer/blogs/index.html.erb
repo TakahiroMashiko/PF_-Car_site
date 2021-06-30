@@ -30,8 +30,8 @@
             <td class="text-left">
               <%= blog.body.truncate(40) %>
             </td>
-            <td class="text-left">
-              <!--js.erbを使用していいね機能実装-->
+            <td class="text-left" id="favorites_buttons_<%= blog.id %>">
+              <%= render partial: 'customer/blogs/favorite', locals: { blog: blog} %>
             </td>
           <tr>
         <% end %>
