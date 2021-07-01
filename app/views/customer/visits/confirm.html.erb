@@ -1,2 +1,41 @@
-<h1>Customer::Visits#confirm</h1>
-<p>Find me in app/views/customer/visits/confirm.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <h2 class="head-line title_h2 text-center bg-light">来店予約確認</h2>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col mt-3">
+      <table>
+        <tbody>
+          <tr>
+            <td class="text-center" style="width: 30%;">ディーラー</td>
+            <td><%= @visit.dealer.address %></td>
+          </tr>
+          <tr>
+            <td class="text-center">氏名（姓名）</td>
+            <td style="white-space: pre-wrap;"><%= @visit.name %></td>
+          </tr>
+          <tr>
+            <td class="text-center">氏名フリガナ（セイメイ）</td>
+            <td style="white-space: pre-wrap;"><%= @visit.name_kana %></td>
+          </tr>
+          <tr>
+            <td class="text-center">電話番号</td>
+            <td style="white-space: pre-wrap;"><%= @visit.phone_number %></td>
+          </tr>
+          <tr>
+            <td class="text-center">メールアドレス</td>
+            <td style="white-space: pre-wrap;"><%= @visit.email %></td>
+          </tr>
+          <tr>
+            <td class="text-center">来店日時</td>
+            <td style="white-space: pre-wrap;"><%= @visit.visit %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
