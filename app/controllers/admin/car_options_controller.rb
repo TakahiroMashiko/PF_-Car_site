@@ -6,7 +6,7 @@ class Admin::CarOptionsController < ApplicationController
   end
 
   def new
-  @caroption = CarOption.new
+    @caroption = CarOption.new
   end
 
   def create
