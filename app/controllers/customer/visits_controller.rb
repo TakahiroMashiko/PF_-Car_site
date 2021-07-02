@@ -7,6 +7,7 @@ class Customer::VisitsController < ApplicationController
 
   def create
     @visit = Visit.new(visit_params)
+    @visit.customer_id = current_customer.id
     if @visit.save
       render "finish"
     else
@@ -24,4 +25,9 @@ class Customer::VisitsController < ApplicationController
   def finish
   end
 
+  # Strong parameters
+  private
+  def visit_params
+    params.require(:visit).permit(:customer_id, :dealer_id, :name, :name_kana, :phone_number, :email, :visit)
+  end
 end
