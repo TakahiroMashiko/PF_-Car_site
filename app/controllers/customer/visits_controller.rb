@@ -6,6 +6,12 @@ class Customer::VisitsController < ApplicationController
   end
 
   def create
+    @visit = Visit.new(visit_params)
+    if @visit.save
+      render "confirm"
+    else
+      render "new"
+    end
   end
 
   def confirm
