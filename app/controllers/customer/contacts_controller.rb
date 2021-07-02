@@ -5,16 +5,6 @@ class Customer::ContactsController < ApplicationController
     @contact = Contact.new
   end
 
-  def confirm
-    @contact = Contact.new(contact_params)
-    if @contact.invalid?
-      render "new"
-    end
-  end
-
-  def finish
-  end
-
   def create
     @contact = Contact.new(contact_params)
     if @contact.save
@@ -23,6 +13,16 @@ class Customer::ContactsController < ApplicationController
     else
       render "new"
     end
+  end
+
+  def confirm
+    @contact = Contact.new(contact_params)
+    if @contact.invalid?
+      render "new"
+    end
+  end
+
+  def finish
   end
 
   # Strong parameters
