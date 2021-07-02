@@ -9,17 +9,17 @@ class Customer::VisitsController < ApplicationController
     @visit = Visit.new(visit_params)
     @visit.customer_id = current_customer.id
     if @visit.save
-      render "finish"
+      redirect_to finish_visits_path
     else
       render "new"
     end
   end
 
   def confirm
-    @contact = Contact.new(contact_params)
-    if @contact.invalid?
-      render "new"
-    end
+    @visit = Visit.new(visit_params)
+    # if @visit.invalid?
+    #   render "new"
+    # end
   end
 
   def finish
