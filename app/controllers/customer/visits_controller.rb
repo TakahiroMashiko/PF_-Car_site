@@ -8,15 +8,20 @@ class Customer::VisitsController < ApplicationController
   def create
     @visit = Visit.new(visit_params)
     if @visit.save
-      render "confirm"
+      render "finish"
     else
       render "new"
     end
   end
 
   def confirm
+    @contact = Contact.new(contact_params)
+    if @contact.invalid?
+      render "new"
+    end
   end
 
   def finish
   end
+
 end
