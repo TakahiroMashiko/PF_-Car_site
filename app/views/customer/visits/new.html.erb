@@ -8,7 +8,7 @@
 <div class="container">
   <div class="row">
     <div class="col mt-3">
-    <%= form_with model: @visit, local: true do |f| %>
+    <%= form_with model: @visit, url: confirm_visits_path, local: true do |f| %>
       <div class="form-inline mb-2">
         <%= f.label :"ディーラー *", class:"col-sm-3" %>
         <%= f.collection_select(:dealer_id, Dealer.all, :id, :address, prompt: "-- 選択してください --", class:"col-sm-9") %>
