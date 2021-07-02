@@ -30,8 +30,11 @@
         <%= f.text_field :email, class:"col-sm-3", placeholder: "sample@example.com" %>
       </div>
       <div class="form-inline mb-3">
-        <%= f.label :"来店日時", class:"col-sm-3" %>
-        <!--カレンダーから選択-->
+        <%= f.label :"来店日時 *", class:"col-sm-3" %>
+         <%= f.datetime_field :visit, class:"col-sm-3" %>
+      </div>
+      <div class="col-sm-5 px-sm-0 mx-auto">
+        <p class="text-danger">* は入力必須項目です。</p>
       </div>
       <div class="col-sm-5 px-sm-0 mx-auto">
         <%= f.submit "情報確認へ進む", class: "btn btn-success" %>
