@@ -17,9 +17,6 @@ class Customer::VisitsController < ApplicationController
 
   def confirm
     @visit = Visit.new(visit_params)
-    # if @visit.invalid?
-    #   render "new"
-    # end
   end
 
   def finish
