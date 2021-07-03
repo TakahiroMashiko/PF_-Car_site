@@ -4,14 +4,16 @@
     <div class="col">
       <img class="img-fluid" src="assets/MIYA151230409796_1920x1137.jpg" alt="main caption-1" width="100%" height="100%">
       <div class="card-img-overlay d-flex align-items-center justify-content-center">
-        <h1 class="text-white text-center bg-transparent">
-          <% if customer_signed_in? %>
-            <appname>Welcome Sengoku Cars.</appname><br>
-            <appname>Show all models. <%= link_to "↪", cars_path, class: "text-white" %></appname>
-          <% else %>
-            <appname>Sengoku Cars ~ your car life. ~ </appname><br>
-            <appname>Log in</appname><%= link_to "", new_customer_session_path, class: "fas fa-sign-in-alt text-white ml-2" %>
-          <% end %>
+        <h1 class="text-white text-center">
+          <div class="content-bg">
+            <% if customer_signed_in? %>
+              <appname>Welcome Sengoku Cars.</appname><br>
+              <appname>Show all models. <%= link_to "↪", cars_path, class: "text-white" %></appname>
+            <% else %>
+              <appname>Sengoku Cars ~ your car life. ~ </appname><br>
+              <appname>Log in</appname><%= link_to "", new_customer_session_path, class: "fas fa-sign-in-alt text-white ml-2" %>
+            <% end %>
+          </div>
         </h1>
       </div>
     </div>
