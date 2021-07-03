@@ -7,6 +7,13 @@
 </div>
 <div class="container">
   <div class="row">
+    <div class="col-sm text-danger">
+      <%= flash[:danger] %>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
     <div class="col mt-3">
     <%= form_with model: @visit, url: confirm_visits_path, local: true do |f| %>
       <div class="form-inline mb-2">
