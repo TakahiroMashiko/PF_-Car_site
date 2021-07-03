@@ -3,26 +3,27 @@
     <div class="col-xs">
       <h2 class="head-line title_h2 text-left text-danger"><strong>重要なお知らせ</strong></h2>
       <p>1. 新型コロナウイルスの影響で営業時間を変更している店舗がございます。詳細は<u><%= link_to "ディーラー一覧", dealers_path, class: "text-dark" %></u>からご確認ください。</p>
-      <p>2. 新型コロナウイルスの影響で来店人数の制限をかけております。緊急の場合は対応しますが、試乗などご希望の場合は来店予約をご利用ください。</p>
+      <p>2. 新型コロナウイルスの影響で来店人数の制限をかけております。緊急の場合は対応しますが、試乗などご希望の場合は<u><%= link_to "来店予約", new_visit_path, class: "text-dark" %></u>をご利用ください。</p>
       <p>3. 販売前のモデルについては本体、オプション価格を予告なく変更する可能性があります。予めご了承ください。</p>
     </div>
   </div>
 </div>
-<div class="container">
-  <div class="row">
-    <div class="col-xs">
-      <h2 class="head-line title_h2 text-left">よくあるお問い合わせ</h2>
-      <p>1. </p>
-      <p>2. </p>
-      <p>3. </p>
-    </div>
-  </div>
-</div>
+<!--余力があれば内容を埋める-->
+<!--<div class="container">-->
+<!--  <div class="row">-->
+<!--    <div class="col-xs">-->
+<!--      <h2 class="head-line title_h2 text-left">よくあるお問い合わせ</h2>-->
+<!--      <p>1. </p>-->
+<!--      <p>2. </p>-->
+<!--      <p>3. </p>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
 <div class="container">
   <div class="row">
     <div class="col-6">
-      <h2 class="head-line title_h2 text-left">上記で解決しない場合は？</h2>
-      <p>お手数ですが、以下問い合わせフォームからご連絡ください。</p>
+      <h2 class="head-line title_h2 text-left">不明点などがある場合は？</h2>
+      <p>お手数ですが、以下の問い合わせフォームからご連絡ください。</p>
       <div class="mx-auto btn btn-info btn-lg" style="width: 150px;">
         <%= link_to "問い合わせ", new_contact_path, class: "text-body" %>
       </div>
