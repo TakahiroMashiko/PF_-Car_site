@@ -11,6 +11,7 @@ class Customer::VisitsController < ApplicationController
     if @visit.save
       redirect_to finish_visits_path
     else
+      flash[:danger] = "情報が入力されていないか、正しい情報ではありません。再度入力してください。"
       render "new"
     end
   end
