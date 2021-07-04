@@ -5,13 +5,17 @@ class Customer::EstimatesController < ApplicationController
     @estimate = Estimate.new
     # Tax
     @tax = 1.10
-    @car = Car.find(params[:id])
-    @car_option = CarOption.find(params[:id])
   end
 
   def create
   end
 
   def update
+  end
+
+  # Strong parameters
+  private
+  def estimate_params
+    params.require(:estimate).permit(:customer_id, :car_id, :car_option_id, :total, :tax, :car_price, :option_price)
   end
 end
