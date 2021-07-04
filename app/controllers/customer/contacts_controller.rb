@@ -19,10 +19,6 @@ class Customer::ContactsController < ApplicationController
 
   def confirm
     @contact = Contact.new(contact_params)
-    if @contact.invalid?
-      flash[:danger] = "情報が入力されていないか、正しい情報ではありません。再度入力してください。"
-      render "new"
-    end
   end
 
   def finish
