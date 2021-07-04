@@ -7,6 +7,7 @@ class Customer::ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
+    @contact.customer_id = current_customer.id
     if @contact.save
       ContactMailer.send_mail(@contact).deliver_now
       redirect_to finish_contacts_path
