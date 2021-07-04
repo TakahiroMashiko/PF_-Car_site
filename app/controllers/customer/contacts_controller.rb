@@ -1,5 +1,5 @@
 class Customer::ContactsController < ApplicationController
-  before_action :authenticate_customer!
+  before_action :authenticate_customer!, only: [:new, :create, :confirm, :finish]
 
   def new
     @contact = Contact.new
