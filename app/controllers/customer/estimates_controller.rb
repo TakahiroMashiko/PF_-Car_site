@@ -5,9 +5,9 @@ class Customer::EstimatesController < ApplicationController
     @estimate = Estimate.new
   end
 
-  def update
+  def create
   end
 
-  def create
+  def update
   end
 end
