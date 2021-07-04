@@ -3,6 +3,8 @@ class Customer::EstimatesController < ApplicationController
 
   def new
     @estimate = Estimate.new
+    # Tax
+    @tax = 1.10
   end
 
   def create
