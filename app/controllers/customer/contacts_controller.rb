@@ -1,5 +1,5 @@
 class Customer::ContactsController < ApplicationController
-  before_action :authenticate_customer!
+  before_action :authenticate_customer!, only: [:new, :create, :confirm, :finish]
 
   def new
     @contact = Contact.new
@@ -18,9 +18,6 @@ class Customer::ContactsController < ApplicationController
 
   def confirm
     @contact = Contact.new(contact_params)
-    if @contact.invalid?
-      render "new"
-    end
   end
 
   def finish

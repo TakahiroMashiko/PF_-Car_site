@@ -7,6 +7,20 @@
 </div>
 <div class="container">
   <div class="row">
+    <div class="col-sm text-danger">
+      <% if @contact.errors.any? %>
+      <h3>入力した内容にエラーが<%= @contact.errors.count %>件あります。</h3>
+      <ul>
+        <% @contact.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
     <div class="col mt-3">
     <%= form_with model: @contact, url: confirm_contacts_path, local: true do |f| %>
       <div class="form-group">
