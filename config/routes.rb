@@ -63,5 +63,6 @@ Rails.application.routes.draw do
       resource :favorites, only: [:create, :destroy]
     end
     resources :dealers, only: [:index, :show]
+    resources :estimates, only: [:new, :create, :update]
   end
 end
