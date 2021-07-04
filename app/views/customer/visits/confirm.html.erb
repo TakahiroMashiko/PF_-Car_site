@@ -8,34 +8,18 @@
 <div class="container">
   <div class="row">
     <div class="col mt-3">
-      <table>
-        <tbody>
-          <tr>
-            <td class="text-center" style="width: 30%;">ディーラー</td>
-            <td><%= @visit.dealer.address %></td>
-          </tr>
-          <tr>
-            <td class="text-center">氏名（姓名）</td>
-            <td style="white-space: pre-wrap;"><%= @visit.name %></td>
-          </tr>
-          <tr>
-            <td class="text-center">氏名フリガナ（セイメイ）</td>
-            <td style="white-space: pre-wrap;"><%= @visit.name_kana %></td>
-          </tr>
-          <tr>
-            <td class="text-center">電話番号</td>
-            <td style="white-space: pre-wrap;"><%= @visit.phone_number %></td>
-          </tr>
-          <tr>
-            <td class="text-center">メールアドレス</td>
-            <td style="white-space: pre-wrap;"><%= @visit.email %></td>
-          </tr>
-          <tr>
-            <td class="text-center">来店日時</td>
-            <td style="white-space: pre-wrap;"><%= @visit.visit %></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="font-weight-bold" style="width: 30%;">ディーラー</div>
+        <p><%= @visit.dealer.address %></p>
+      <div class="font-weight-bold">氏名（姓名）</div>
+        <p><%= @visit.name %></p>
+      <div class="font-weight-bold">氏名フリガナ（セイメイ）</div>
+        <p><%= @visit.name_kana %></p>
+      <div class="font-weight-bold">電話番号</div>
+        <p><%= @visit.phone_number %></p>
+      <div class="font-weight-bold">メールアドレス</div>
+        <p><%= @visit.email %></p>
+      <div class="font-weight-bold">来店日時</div>
+        <p><%= @visit.visit %></p>
       <%= form_with model: @visit, local: true do |f| %>
         <%= f.hidden_field :dealer_id %>
         <%= f.hidden_field :name %>
@@ -43,7 +27,9 @@
         <%= f.hidden_field :phone_number %>
         <%= f.hidden_field :email %>
         <%= f.hidden_field :visit %>
-        <div><%= f.submit '送信' %></div>
+        <div class="text-center">
+          <%= f.submit '送信', class: "btn btn-success" %>
+        </div>
       <% end %>
     </div>
   </div>
