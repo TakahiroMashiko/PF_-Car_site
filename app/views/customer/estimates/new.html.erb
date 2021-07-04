@@ -1,2 +1,25 @@
-<h1>Customer::Estimates#new</h1>
-<p>Find me in app/views/customer/estimates/new.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <h2 class="head-line title_h2 text-center bg-light">見積り</h2>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col mt-3">
+    <%= form_with model: @car, local: true do |f| %>
+      <div class="form-inline mb-2">
+        <%= f.label :"モデル", class:"col-sm-3" %>
+        <%= f.collection_select(:car_id, Car.all, :id, :name, prompt: "-- 選択してください --", class:"col-sm-9") %>
+      </div>
+    <% end %>
+    <%= form_with model: @caroption, local: true do |f| %>
+      <div class="form-inline mb-2">
+        <%= f.label :"オプション", class:"col-sm-3" %>
+        <%= f.collection_check_boxes(:car_option_id, CarOption.all, :id, :name, class:"col-sm-9") %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
