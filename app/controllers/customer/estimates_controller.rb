@@ -6,6 +6,7 @@ class Customer::EstimatesController < ApplicationController
     # Tax
     @tax = 1.10
     @car = Car.find(params[:id])
+    @car_option = CarOption.find(params[:id])
   end
 
   def create
