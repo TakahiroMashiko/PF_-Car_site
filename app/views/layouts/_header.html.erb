@@ -1,7 +1,7 @@
 <header class="header bg-light">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 display-4">
+      <div class="col-md-6 display-4">
         <% if admin_signed_in? %>
           <logo><%= link_to "", admin_root_path, class: "fas fa-car text-body" %> Sengoku Cars</logo>
         <% else %>
@@ -10,6 +10,9 @@
       </div>
       <div class="col-md-1 text-right d-flex align-items-center">
         <%= link_to "Model", cars_path, class: "text-body" %>
+      </div>
+      <div class="col-md-1 text-right d-flex align-items-center">
+        <%= link_to "Dealer", dealers_path, class: "text-body" %>
       </div>
       <div class="col-md-1 text-right d-flex align-items-center">
         <%= link_to "FAQ", faq_homes_path, class: "text-body" %>
@@ -30,7 +33,7 @@
           <%= link_to "Login", new_customer_session_path, class: "text-body" %>
         <% end %>
       </div>
-      <div class="col-md-2 text-right d-flex align-items-center">
+      <div class="col-md-1 text-right d-flex align-items-center">
         <!--検索ボックスを実装する-->
       </div>
     </div>
