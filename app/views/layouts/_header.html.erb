@@ -12,11 +12,20 @@
         <%= link_to "FAQ", faq_homes_path, class: "text-body" %>
       </div>
       <div class="col-md-1 text-right d-flex align-items-center">
-      <% if admin_signed_in? %>
-        <%= link_to "LogOut", destroy_admin_session_path, method: :delete, class: "text-body" %>
-      <% else %>
-        <%= link_to "Help", new_contact_path, class: "text-body" %>
-      <% end %>
+        <% if customer_signed_in? %>
+          <%= link_to "Help", new_contact_path, class: "text-body" %>
+        <% else %>
+          <%= link_to "SignUp", new_customer_registration_path, class: "text-body" %>
+        <% end %>
+      </div>
+      <div class="col-md-1 text-right d-flex align-items-center">
+        <% if admin_signed_in? %>
+          <%= link_to "LogOut", destroy_admin_session_path, method: :delete, class: "text-body" %>
+        <% elsif customer_signed_in? %>
+          <%= link_to "LogOut", destroy_customer_session_path, method: :delete, class: "text-body" %>
+        <% else %>
+          <%= link_to "Login", new_customer_session_path, class: "text-body" %>
+        <% end %>
       </div>
       <div class="col-md-2 text-right d-flex align-items-center">
         <!--検索ボックスを実装する-->
