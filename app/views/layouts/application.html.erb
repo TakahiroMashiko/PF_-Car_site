@@ -10,12 +10,11 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/c8d962707b.js" crossorigin="anonymous"></script>
   </head>
-
   <body>
-    <div id="wrapper" class="bg-light">
-      <%= render "layouts/header" %>
+    <%= render "layouts/header" %>
+      <div id="wrapper" class="bg-light">
         <%= yield %>
-      <%= render "layouts/footer" %>
-    </div>
+      </div>
+    <%= render "layouts/footer" %>
   </body>
 </html>
