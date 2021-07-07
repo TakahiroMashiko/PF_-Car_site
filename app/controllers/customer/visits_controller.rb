@@ -25,6 +25,6 @@ class Customer::VisitsController < ApplicationController
   # Strong parameters
   private
   def visit_params
-    params.require(:visit).permit(:customer_id, :dealer_id, :name, :name_kana, :phone_number, :email, :visit)
+    params.require(:visit).permit(:customer_id, :dealer_id, :name, :name_kana, :phone_number, :email, :visit, :visit_status)
   end
 end
