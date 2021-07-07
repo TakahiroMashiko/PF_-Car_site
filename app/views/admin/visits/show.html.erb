@@ -8,38 +8,40 @@
 <br>
 <div class="container">
   <div class="row">
-    <div class="col-sm-5 mx-auto">
+    <div class="col-sm-9 mx-auto">
       <table class="table table-borderless">
         <tbody>
           <tr>
-            <td style="width: 40%">氏名</td>
+            <td style="width: 25%">氏名</td>
             <td><%= @visit.name %></td>
           </tr>
           <tr>
-            <td style="width: 40%">来店時間</td>
-            <td><%= @visit.visit.strftime('%F-%X') %></td>
+            <td style="width: 25%">来店時間</td>
+            <td><%= @visit.visit %></td>
           </tr>
           <tr>
-            <td style="width: 40%">店舗名</td>
-            <td><%= @visit.dealer.name %></td>
+            <td style="width: 25%">店舗名</td>
+            <td><%= @visit.dealer.address %></td>
           </tr>
           <tr>
-            <td style="width: 40%">ステータス</td>
+            <td style="width: 25%">ステータス</td>
             <td>
-              <% if @visit.visit_status == 0 %>
+              <% if @visit.visit_status == '来店待ち' %>
                 <p class="text-success mt-2">来店待ち</p>
-              <% else if @visit.visit_status == 1 %>
+              <% elsif @visit.visit_status == '接客中' %>
                 <p class="text-danger mt-2">接客中</p>
-              <% else if @visit.visit_status == 2 %>
-                <p class="text-primary mt-2">キャンセル</p>
-              <% else %>
+              <% elsif @visit.visit_status == '接客済み' %>
                 <p class="text-secondary mt-2">接客済み</p>
+              <% else %>
+                <p class="text-primary mt-2">キャンセル</p>
               <% end %>
             </td>
           </tr>
         </tbody>
       </table>
-      <%= link_to "更新する", edit_admin_visit_path(@visit), class: "btn btn-success mt-3 mr-3" %>
+      <div class="col-sm-5 px-sm-0 mx-auto">
+        <%= link_to "更新する", edit_admin_visit_path(@visit), class: "btn btn-success mt-3 mr-3" %>
+      </div>
     </div>
   </div>
 </div>
