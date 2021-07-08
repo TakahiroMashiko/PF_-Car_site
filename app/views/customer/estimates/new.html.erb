@@ -8,10 +8,11 @@
 <div class="container">
   <div class="row">
     <div class="col mt-3">
-    <%= form_with model: @car, local: true do |f| %>
+    <%= form_with model: @car, url: confirm_estimates_path, local: true do |f| %>
       <div class="form-inline mb-2">
         <%= f.label :"モデル", class:"col-sm-3" %>
         <%= f.collection_select(:car_id, Car.all, :id, :name, prompt: "-- 選択してください --", class:"col-sm-9") %>
+        <%= f.submit "見積金額確認", class: "btn btn-success ml-5" %>
       </div>
     <% end %>
     <%= form_with model: @caroption, local: true do |f| %>
