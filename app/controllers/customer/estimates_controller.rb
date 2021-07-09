@@ -14,8 +14,9 @@ class Customer::EstimatesController < ApplicationController
 
   def create
     @estimate = Estimate.find(params[:id])
-    @estimate.customer_id = current_customer.id
+    @customer = current_customer.id
     if @estimate.save
+      NotificationMailer.send_confirm_to_customer(@customer).deliver
       redirect_to confirm_estimates_path
     else
       render "new"
