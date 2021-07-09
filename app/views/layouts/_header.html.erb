@@ -48,7 +48,7 @@
               </div>
               <div class="col-xs-1 pr-2 text-right d-flex align-items-center">
                 <% if customer_signed_in? %>
-                  <%= link_to "Help", new_contact_path, class: "text-body" %>
+                  <%= link_to "Contact", new_contact_path, class: "text-body" %>
                 <% else %>
                   <%= link_to "SignUp", new_customer_registration_path, class: "text-body" %>
                 <% end %>
