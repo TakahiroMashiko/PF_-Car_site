@@ -7,6 +7,7 @@ class Customer::EstimatesController < ApplicationController
 
   def confirm
     @estimate = Estimate.new(estimate_params)
+    @caroptions = CarOption.all
     # Tax
     @tax = 1.10
   end
@@ -21,7 +22,15 @@ class Customer::EstimatesController < ApplicationController
     end
   end
 
-  def update
+  def finish
+    @estimate = Estimate.find(params[:id])
+    @estimate.customer_id = current_customer.id
+    if @estimate.customer_id == current_customer.id
+
+      redirect_to customers_path
+    else
+      render "new"
+    end
   end
 
   # Strong parameters
