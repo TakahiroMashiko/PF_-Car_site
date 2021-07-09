@@ -1,0 +1,7 @@
+<%= @customer.name %> 様
+
+<%= @estimate.car.name %>の見積りです。
+
+<%= @estimate.car.introduction %>
+<%= @estimate.car.genre.name %>
+<%= ((@estimate.car.price*@tax).to_i).to_s(:delimited) %>（<%= (@estimate.car.price).to_s(:delimited) %>）円
