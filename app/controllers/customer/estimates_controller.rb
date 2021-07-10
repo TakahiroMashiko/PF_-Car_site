@@ -13,10 +13,9 @@ class Customer::EstimatesController < ApplicationController
   end
 
   def create
-    @estimate = Estimate.find(params[:id])
+    @estimate = Estimate.new(estimate_params)
     @customer = current_customer.id
     if @estimate.save
-      NotificationMailer.send_confirm_to_customer(@customer).deliver
       redirect_to confirm_estimates_path
     else
       render "new"
@@ -24,14 +23,8 @@ class Customer::EstimatesController < ApplicationController
   end
 
   def finish
-    @estimate = Estimate.find(params[:id])
-    @estimate.customer_id = current_customer.id
-    if @estimate.customer_id == current_customer.id
-
-      redirect_to customers_path
-    else
-      render "new"
-    end
+    @customer = current_customer
+    NotificationMailer.send_confirm_to_customer(@customer).deliver
   end
 
   # Strong parameters
