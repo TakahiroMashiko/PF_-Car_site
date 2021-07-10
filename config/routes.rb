@@ -63,9 +63,10 @@ Rails.application.routes.draw do
       resource :favorites, only: [:create, :destroy]
     end
     resources :dealers, only: [:index, :show]
-    resources :estimates, only: [:new, :create, :update] do
+    resources :estimates, only: [:new, :create] do
     collection do
         post 'confirm'
+        get 'finish'
       end
     end
   end
