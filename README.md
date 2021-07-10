@@ -30,8 +30,9 @@ https://docs.google.com/spreadsheets/d/10d3oSUZ3sS1FvqfFtKPMHb_i59qZfacKtS_YWCOe
 - Gem：devise 4.8.0  
 ImageMagick 7.0.11-15  
 rubocop 1.17.0  
-rubocop-rails 2.10.1
-dotenv-rails
+rubocop-rails 2.10.1  
+dotenv-rails  
+ransack  
 - CSS フレームワーク：BootStrap
 - JS ライブラリ：jQuery
 - IDE：Cloud9
@@ -46,6 +47,6 @@ https://app.diagrams.net/
 - ぱくたそ、イラストAC：画像の挿入時に使用したサービス  
 https://www.pakutaso.com/  
 https://www.ac-illust.com/
-- FontAwesome、Google Fonts：Webフォント
+- FontAwesome、Google Fonts：Webフォント  
 https://fontawesome.com/  
 https://fonts.google.com/
