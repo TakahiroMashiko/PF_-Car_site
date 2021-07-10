@@ -3,6 +3,10 @@ class NotificationMailer < ApplicationMailer
 
   def send_confirm_to_customer(customer)
     @customer = customer
+    @car = Car.all
+    @caroptions = CarOption.all
+    # Tax
+    @tax = 1.10
      mail(
       subject: "[Sengoku Cars]モデルの見積り",
       to: @customer.email
