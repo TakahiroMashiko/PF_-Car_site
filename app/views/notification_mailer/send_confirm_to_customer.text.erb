@@ -1,7 +1,39 @@
-<%= @customer.name %> 様
+※こちらは送信専用のメールアドレスにつき、
+返信をいただいても回答ができません。ご了承ください。
 
-<%= @estimate.car.name %>の見積りです。
+Sengoku Carsです。
 
-<%= @estimate.car.introduction %>
-<%= @estimate.car.genre.name %>
-<%= ((@estimate.car.price*@tax).to_i).to_s(:delimited) %>（<%= (@estimate.car.price).to_s(:delimited) %>）円
+ご利用いただきありがとうございます。
+各モデルの見積りを送付いたします。
+
+<% @car.each do |car| %>
+・モデル名
+<%= car.name %>
+
+・モデル説明
+<%= car.introduction %>
+
+・ジャンル
+<%= car.genre.name %>
+
+・モデル税込価格(税抜価格)
+¥<%= ((car.price*@tax).to_i).to_s(:delimited) %>（<%= car.price.to_s(:delimited) %>）円
+---------------------------------------
+<% end %>
+<% @caroptions.each do |car_option| %>
+・オプション名
+<%= car_option.name %>
+
+・オプション税込価格(税抜価格)
+¥<%= ((car_option.price*@tax).to_i).to_s(:delimited) %>（<%= car_option.price.to_s(:delimited) %>）円
+---------------------------------------
+<% end %>
+
+※こちらは参考価格であり、実際の金額は店頭にてお確かめください。
+
+---------------------------------------
+Sengoku Cars
+住所（本店）：150-0001 東京都渋谷区神宮前0-0-0
+電話番号（代表）：03-6721-2002
+メールアドレス：sengoku.cars@gmail.com
+---------------------------------------
