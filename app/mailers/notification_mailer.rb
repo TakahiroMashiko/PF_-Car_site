@@ -4,7 +4,7 @@ class NotificationMailer < ApplicationMailer
   def send_confirm_to_customer(customer)
     @customer = customer
      mail(
-      subject: "[Sengoku Cars]モデルのお見積り",
+      subject: "[Sengoku Cars]モデルの見積り",
       to: @customer.email
     ) do |format|
       format.text
