@@ -25,13 +25,21 @@
                 <%= link_to "Dealer", admin_dealers_path, class: "text-body" %>
               </div>
               <div class="col-xs-1 pr-2 text-right d-flex align-items-center">
+                <%= link_to "Blog", admin_blogs_path, class: "text-body" %>
+              </div>
+              <div class="col-xs-1 pr-2 text-right d-flex align-items-center">
                 <%= link_to "Contact", admin_contacts_path, class: "text-body" %>
               </div>
               <div class="col-xs-1 pr-2 text-right d-flex align-items-center">
                 <%= link_to "LogOut", destroy_admin_session_path, method: :delete, class: "text-body" %>
               </div>
               <div class="col-xs-1 text-right d-flex align-items-center">
-                <!--検索ボックスを実装する-->
+                <%= search_form_for @search, url: blogs_path do |f| %>
+                <div class="form-inline">
+                  <%= f.text_field :title_cont, placeholder: '検索するテキストを入力...' %>
+                  <%= f.submit ("検索") %>
+                </div>
+                <% end %>
               </div>
             <% else %>
               <div class="col-xs-1 pr-2 text-right d-flex align-items-center">
@@ -44,11 +52,11 @@
                 <%= link_to "Dealer", dealers_path, class: "text-body" %>
               </div>
               <div class="col-xs-1 pr-2 text-right d-flex align-items-center">
-                <%= link_to "FAQ", faq_homes_path, class: "text-body" %>
+                <%= link_to "Blog", blogs_path, class: "text-body" %>
               </div>
               <div class="col-xs-1 pr-2 text-right d-flex align-items-center">
                 <% if customer_signed_in? %>
-                  <%= link_to "Contact", new_contact_path, class: "text-body" %>
+                  <%= link_to "FAQ", faq_homes_path, class: "text-body" %>
                 <% else %>
                   <%= link_to "SignUp", new_customer_registration_path, class: "text-body" %>
                 <% end %>
@@ -64,9 +72,14 @@
                 <% end %>
               </div>
               <div class="col-xs-1 text-right d-flex align-items-center">
-                <!--検索ボックスを実装する-->
+                <%= search_form_for @search, url: blogs_path do |f| %>
+                <div class="form-inline">
+                  <%= f.text_field :title_cont, placeholder: '検索するテキストを入力...' %>
+                  <%= f.submit ("検索") %>
+                </div>
+                <% end %>
               </div>
-              <% end %>
+            <% end %>
           </div>
         </div>
       </nav>
