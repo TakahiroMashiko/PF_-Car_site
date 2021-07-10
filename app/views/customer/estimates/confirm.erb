@@ -37,23 +37,21 @@
     <table class="table table-hover table-condensed">
       <thead>
         <tr class="info">
-          <th class="bg-light" style="width: 10%"></th>
-          <th class="bg-light" style="width: 50%">オプション</th>
-          <th class="bg-light" style="width: 20%">税抜価格</th>
-          <th class="bg-light" style="width: 20%">販売ステータス</th>
+          <th class="bg-light" style="width: 30%">オプション</th>
+          <th class="bg-light" style="width: 40%">税込価格(税抜価格)</th>
+          <th class="bg-light" style="width: 30%">販売ステータス</th>
         </tr>
       </thead>
       <tbody>
         <% @caroptions.each do |car_option| %>
           <tr>
-            <td class="text-left", style="width: 10%"></td>
-            <td class="text-left", style="width: 50%">
+            <td class="text-left", style="width: 30%">
               <%= car_option.name %>
             </td>
             <td class="text-left", style="width: 20%">
-              ¥<%= car_option.price.to_s(:delimited) %>
+              ¥<%= ((car_option.price*@tax).to_i).to_s(:delimited) %>（<%= car_option.price.to_s(:delimited) %>）円
             </td>
-            <td class="text-left", style="width: 20%">
+            <td class="text-left", style="width: 30%">
               <% if car_option.is_active == true %>
                 <p class="text-success mt-2">販売中</p>
               <% else %>
@@ -65,5 +63,7 @@
       </tbody>
     </table>
   </div>
-  <%= link_to "見積りメール送付", finish_estimates_path, class: "btn btn-success btn-md mt-2" %>
+  <div class="text-center mb-5">
+    <%= link_to "見積りメール送付", finish_estimates_path, class: "btn btn-success btn-md mt-2" %>
+  </div>
 </div>
