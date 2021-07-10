@@ -86,3 +86,6 @@ gem 'rubocop-rails', require: false
 
 # Install dotenv-rails
 gem "dotenv-rails"
+
+# Install ransack
+gem 'ransack'
