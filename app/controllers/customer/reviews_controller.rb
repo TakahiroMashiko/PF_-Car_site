@@ -28,6 +28,13 @@ class Customer::ReviewsController < ApplicationController
   end
 
   def update
+    @review = Review.find(params[:id])
+    if @review.update(review_params)
+      flash[:notice] = "レビューの内容を更新しました"
+      redirect_to review_path(@review.id)
+    else
+      render "edit"
+    end
   end
 
   def destroy
