@@ -10,6 +10,13 @@ class Customer::ReviewsController < ApplicationController
   end
 
   def create
+    @review = Review.new(review_params)
+    if @review.save
+      flash[:notice] = "レビューを新規投稿しました"
+      redirect_to review_path(@review.id)
+    else
+      render "new"
+    end
   end
 
   def show
