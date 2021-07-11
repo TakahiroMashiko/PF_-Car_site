@@ -69,5 +69,6 @@ Rails.application.routes.draw do
         get 'finish'
       end
     end
+    resources :reviews
   end
 end
