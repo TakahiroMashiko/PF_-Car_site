@@ -23,4 +23,10 @@ class Customer::ReviewsController < ApplicationController
 
   def destroy
   end
+
+  # Strong parameters
+  private
+  def review_params
+    params.require(:review).permit(:customer_id, :title, :body, :evaluation)
+  end
 end
