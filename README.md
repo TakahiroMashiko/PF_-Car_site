@@ -19,8 +19,7 @@ https://drive.google.com/file/d/1XOHtMAigU6K3UGyDiZHgayTsZ6S1jcVQ/view?usp=shari
 - アプリケーション詳細設計書  
 https://drive.google.com/file/d/1SsdtoeytKofAebIETGMJZjc8mSNryVpF/view?usp=sharing
 - ER図  
-![dwcpro_pf_sengokucars_er_update](https://user-images.githubusercontent.com/80663962/121800514-600e8d00-cc6d-11eb-96c2-aa4ab77d167e.png)
-
+![dwcpro_pf_sengokucars_er](https://user-images.githubusercontent.com/80663962/125191737-ee7f2a00-e27e-11eb-81a9-6ba709ca5ebf.png)
 ## チャレンジ要素一覧  
 https://docs.google.com/spreadsheets/d/10d3oSUZ3sS1FvqfFtKPMHb_i59qZfacKtS_YWCOe8PE/edit?usp=sharing  
 ## 開発環境    
