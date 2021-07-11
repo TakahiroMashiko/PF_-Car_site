@@ -38,6 +38,13 @@ class Customer::ReviewsController < ApplicationController
   end
 
   def destroy
+    @review = Review.find(params[:id])
+    if @review.destroy
+      flash[:notice] = "レビューを削除しました"
+      redirect_to reviews_path
+    else
+      render "edit"
+    end
   end
 
   # Strong parameters
