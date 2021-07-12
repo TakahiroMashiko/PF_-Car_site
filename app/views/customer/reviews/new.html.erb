@@ -1,2 +1,31 @@
-<h1>Customer::Reviews#new</h1>
-<p>Find me in app/views/customer/reviews/new.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <h2 class="head-line title_h2 text-center bg-light">ブログ新規登録</h2>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-5 px-sm-0 mx-auto">
+    <div class="my-3">
+    <%= form_with model: @review, url: reviews_path, local: true do |f| %>
+      <%= render 'form_review', f: f %>
+      <div class="form-inline mb-2">
+        <%= f.label :"評価", class:"col-sm-3" %>
+        <div id="evaluate_stars"></div>
+      </div>
+      <div class="col-sm-5 px-sm-0 mx-auto">
+        <%= f.submit "新規登録", class: "btn btn-success text-center" %>
+      </div>
+    <% end %>
+    <script>
+      $('#evaluate_stars').raty({
+        starOn: "<%= asset_path('star-on.png') %>",
+        starOff: "<%= asset_path('star-off.png') %>",
+        starHalf: "<%= asset_path('star-half.png') %>",
+        scoreName: 'review[evaluation]'
+      });
+    </script>
+    </div>
+  </div>
+</div>
