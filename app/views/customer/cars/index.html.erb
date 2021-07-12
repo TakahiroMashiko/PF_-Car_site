@@ -7,7 +7,7 @@
   <div class="row">
     <p class="mx-auto text-center">
       お好きなモデルをご覧ください。<br>
-      モデル名をクリックすると詳細情報を確認できます。
+      画像もしくはモデル名をクリックすると詳細情報を確認できます。
     </p>
   </div>
 </div>
@@ -28,7 +28,9 @@
         <% @cars.each do |car| %>
           <tr>
             <td class="image">
-              <%= attachment_image_tag car, :image, format: 'jpeg', size: "300x230", fallback: "no_image.jpg" %>
+              <%= link_to car_path(car), target: "_blank" do %>
+                <%= attachment_image_tag car, :image, format: 'jpeg', size: "300x230", fallback: "no_image.jpg" %>
+              <% end %>
             </td>
             <td class="text-left">
               <%= link_to car_path(car) do %>
