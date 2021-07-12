@@ -33,7 +33,7 @@
             </td>
             <td class="text-left">
               <%= link_to blog_path(blog), class: "btn-link" do %>
-                <u class="text-dark"><%= blog.title %></u>
+                <u class="text-dark"><%= blog.title.truncate(40) %></u>
               <% end %>
             </td>
             <td class="text-left">
