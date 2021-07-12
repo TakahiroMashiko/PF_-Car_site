@@ -11,6 +11,7 @@ class Customer::ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+    @review.customer_id = current_customer.id
     if @review.save
       flash[:notice] = "レビューを新規投稿しました"
       redirect_to review_path(@review.id)
