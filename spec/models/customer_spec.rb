@@ -15,7 +15,7 @@ RSpec.describe Customer, type: :model do
   end
 
   it "メールアドレスが重複していたら登録できない" do
-    customer1 = FactoryBot.create(:customer,name: "taka", email: "taka@example.com")
+    customer1 = FactoryBot.create(:customer, name: "taka", email: "taka@example.com")
     expect(FactoryBot.build(:customer, name: "hiro", email: customer1.email)).to_not be_valid
   end
 
@@ -26,6 +26,10 @@ RSpec.describe Customer, type: :model do
   it "パスワードが暗号化されている" do
     customer = FactoryBot.create(:customer)
     expect(customer.password_digest).to_not eq "password"
+  end
+
+  it "password_confirmationとpasswordが異なる場合は保存できない" do
+    expect(FactoryBot.build(:customer, password: "password",password_confirmation: "passward")).to_not be_valid
   end
 
 end
