@@ -19,7 +19,9 @@ RSpec.describe Customer, type: :model do
     expect(FactoryBot.build(:customer, name: "hiro", email: customer1.email)).to_not be_valid
   end
 
-  it "パスワードがなければ登録できない"
+  it "パスワードがなければ登録できない" do
+    expect(FactoryBot.build(:customer, password: "")).to_not be_valid
+  end
 
   it "パスワードが暗号化されている"
 
