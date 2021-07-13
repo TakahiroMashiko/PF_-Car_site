@@ -32,6 +32,7 @@ rubocop 1.17.0
 rubocop-rails 2.10.1  
 dotenv-rails  
 ransack  
+rspec-rails
 - CSS フレームワーク：BootStrap
 - JS ライブラリ：jQuery
 - IDE：Cloud9
