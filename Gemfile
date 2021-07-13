@@ -92,3 +92,6 @@ gem 'ransack'
 
 # Install rspec-rails
 gem 'rspec-rails'
+
+# Install factory_bot_rails
+gem 'factory_bot_rails'
