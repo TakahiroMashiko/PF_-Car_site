@@ -23,6 +23,9 @@ RSpec.describe Customer, type: :model do
     expect(FactoryBot.build(:customer, password: "")).to_not be_valid
   end
 
-  it "パスワードが暗号化されている"
+  it "パスワードが暗号化されている" do
+    customer = FactoryBot.create(:customer)
+    expect(customer.password_digest).to_not eq "password"
+  end
 
 end
