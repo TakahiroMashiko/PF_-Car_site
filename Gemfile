@@ -89,3 +89,6 @@ gem "dotenv-rails"
 
 # Install ransack
 gem 'ransack'
+
+# Install rspec-rails
+gem 'rspec-rails'
