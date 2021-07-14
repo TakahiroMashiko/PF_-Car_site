@@ -6,10 +6,10 @@
   </div>
 </div>
 <div class="row">
-  <div class="col text-center">
+  <div class="col-sm text-center">
     <%= attachment_image_tag @blog, :image, format: 'jpeg', size: "300x230", fallback: "no_image.jpg" %>
   </div>
-  <div class="col-sm-5 px-sm-0 mx-auto">
+  <div class="col-sm px-sm-0 mx-auto">
     <div class="my-3">
     <%= form_with model: [:admin, @blog], local: true do |f| %>
       <%= render 'form_blog', f: f %>
