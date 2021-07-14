@@ -39,9 +39,15 @@
             <td class="text-left">
               <%= blog.body.truncate(40) %>
             </td>
+            <% if customer_signed_in? %>
             <td class="text-left" id="favorites_buttons_<%= blog.id %>">
               <%= render partial: 'customer/blogs/favorite', locals: { blog: blog} %>
             </td>
+            <% else %>
+            <td class="text-left text-danger">
+              ログイン後に確認できます。
+            </td>
+            <% end %>
           <tr>
         <% end %>
       </tbody>
