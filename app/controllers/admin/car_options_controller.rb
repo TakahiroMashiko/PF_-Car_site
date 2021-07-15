@@ -31,7 +31,7 @@ class Admin::CarOptionsController < ApplicationController
 
   def update
     @caroption = CarOption.find(params[:id])
-    if @caroption.update(car_params)
+    if @caroption.update(caroption_params)
       flash[:notice] = "オプションの情報を更新しました"
       redirect_to admin_car_option_path(@caroption.id)
     else
