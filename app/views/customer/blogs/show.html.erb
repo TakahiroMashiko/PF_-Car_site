@@ -9,7 +9,7 @@
   <div class="row">
     <div class="col-xs-3 mt-5">
        <div id="img_field">
-        <%= attachment_image_tag @blog, :image, format: 'jpeg', size: "300x230", fallback: "no_image.jpg" %>
+        <%= attachment_image_tag @blog, :image, format: 'jpeg', fallback: "no_image.jpg" %>
       </div>
     </div>
     <div class="col-sm-5 offset-sm-1 px-sm-0">
@@ -19,9 +19,15 @@
         <div class="font-weight-bold">本文</div>
           <p><%= @blog.body %></p>
         <div class="font-weight-bold">いいね</div>
+        <% if customer_signed_in? %>
         <div class="font-weight-bold" id="favorites_buttons_<%= @blog.id %>">
           <%= render partial: 'customer/blogs/favorite', locals: { blog: @blog} %>
         </div>
+        <% else %>
+        <div class="text-danger">
+          ログイン後に確認できます。
+        </div>
+        <% end %>
       </div>
     </div>
   </div>
