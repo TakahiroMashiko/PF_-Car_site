@@ -84,8 +84,11 @@ gem 'rubocop', require: false
 # Install rubocop-rails
 gem 'rubocop-rails', require: false
 
-# Install dotenv-rails
+# Install dotenv-rails,mysql2
 gem "dotenv-rails"
+group :production do
+  gem 'mysql2'
+end
 
 # Install ransack
 gem 'ransack'
