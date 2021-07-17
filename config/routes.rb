@@ -36,7 +36,6 @@ Rails.application.routes.draw do
     resources :homes, :except => [:index, :create, :new, :edit, :show, :update, :destroy] do
       collection do
         get 'top'
-        get 'about'
         get 'faq'
       end
     end
