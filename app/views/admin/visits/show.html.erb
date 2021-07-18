@@ -12,8 +12,8 @@
       <table class="table table-borderless">
         <tbody>
           <tr>
-            <td style="width: 25%">氏名</td>
-            <td><%= @visit.name %></td>
+            <td style="width: 25%">氏名(カナ)</td>
+            <td><%= @visit.name %> (<%= @visit.name_kana %>)</td>
           </tr>
           <tr>
             <td style="width: 25%">来店時間</td>
@@ -22,6 +22,14 @@
           <tr>
             <td style="width: 25%">店舗名</td>
             <td><%= @visit.dealer.address %></td>
+          </tr>
+          <tr>
+            <td style="width: 25%">電話番号</td>
+            <td><%= @visit.phone_number %></td>
+          </tr>
+          <tr>
+            <td style="width: 25%">メールアドレス</td>
+            <td><%= @visit.email %></td>
           </tr>
           <tr>
             <td style="width: 25%">ステータス</td>
